@@ -53,6 +53,16 @@ tempo_decorrido = 0
 intervalo_criacao_moedas = 5000
 tempo_anterior = pygame.time.get_ticks()
 
+#Imagem das moedas
+imagem_contador_moedas = pygame.image.load("Sprites/Coletaveis/moeda.png")
+imagem_contador_moedas = pygame.transform.scale(imagem_contador_moedas, (50, 55))
+
+imagem_contador_rubis = pygame.image.load("Sprites/Coletaveis/ruby.png")
+imagem_contador_rubis = pygame.transform.scale(imagem_contador_rubis, (50, 55))
+
+imagem_contador_esmeraldas = pygame.image.load("Sprites/Coletaveis/esmeralda.png")
+imagem_contador_esmeraldas = pygame.transform.scale(imagem_contador_esmeraldas, (50, 55))
+
 ### Tela de Start
 def tela_start():
     start_image = imagem
@@ -133,19 +143,20 @@ while gameLoop:
         tempo_decorrido = 0
 
     ### Contador de Moedas
-    texto_contador_moedas = fonte.render(f"Moedas: {contador_moedas}", True, (255, 255, 255))
-    posicao_texto_contador_moedas = (10, 10)
-    display.blit(texto_contador_moedas, posicao_texto_contador_moedas)
-
+    display.blit(imagem_contador_moedas, (10, 10))
+    texto_contador_moeda = fonte.render(f"{contador_moedas}", True, (255, 255, 255))
+    display.blit(texto_contador_moeda, (55, 28))
+    
     ### Contador Rubis
-    texto_contador_rubis = fonte.render(f"Rubis: {contador_rubis}", True, (255, 255, 255))
-    posicao_texto_contador_rubis = (150, 10)
-    display.blit(texto_contador_rubis, posicao_texto_contador_rubis)
-
+    display.blit(imagem_contador_rubis, (95, 10))
+    texto_contador_rubis = fonte.render(f"{contador_rubis}", True, (255, 255, 255))
+    display.blit(texto_contador_rubis, (155, 28))
+    
     ### Contador Esmeraldas
-    texto_contador_esmeraldas = fonte.render(f"Esmeraldas: {contador_esmeraldas}", True, (255, 255, 255))
-    posicao_texto_contador_esmeraldas = (270, 10)
-    display.blit(texto_contador_esmeraldas, posicao_texto_contador_esmeraldas)
+    display.blit(imagem_contador_esmeraldas, (195, 10))
+    texto_contador_esmeraldas = fonte.render(f"{contador_esmeraldas}", True, (255, 255, 255))
+    display.blit(texto_contador_esmeraldas, (255, 28))
+    
     ### Atualiza os sprites e Desenha os sprites (personagem) na tela
     sprites.update()
     sprites.draw(display)
