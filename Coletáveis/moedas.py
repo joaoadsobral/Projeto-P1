@@ -29,7 +29,7 @@ class Moeda(pygame.sprite.Sprite):
         return contador_moedas
 
     def movimento(self):
-        self.rect.x -= 5
+        self.rect.x -= 20
 
 
 class Rubi(pygame.sprite.Sprite):
@@ -61,7 +61,7 @@ class Rubi(pygame.sprite.Sprite):
         return contador_rubis
 
     def movimento(self):
-        self.rect.x -= 5
+        self.rect.x -= 20
 
 class Esmeralda(pygame.sprite.Sprite):
     ### Parametros iniciais das moedas
@@ -92,6 +92,6 @@ class Esmeralda(pygame.sprite.Sprite):
         return contador_esmeraldas
 
     def movimento(self):
-        self.rect.x -= 5
+        self.rect.x -= 20
 
 
