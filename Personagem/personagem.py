@@ -1,13 +1,13 @@
 import pygame
 from pygame.locals import *
-
-
+import pygame.mask
 relogio = pygame.time.Clock()
 
 ### Baixar os Sprites correndo, pulo, deslize
 sprite_sheet = pygame.image.load('Sprites/Movimentação - Personagem/spritesheet.png')
 sprite_sheetSlide = pygame.image.load('Sprites/Movimentação - Personagem/spritesheetDeslizando.png')
 sprite_sheetPulo = pygame.image.load('Sprites/Movimentação - Personagem/spritesheetPulo.png')
+
 
 class Personagem(pygame.sprite.Sprite):
     def __init__(self, x, y):
@@ -20,24 +20,27 @@ class Personagem(pygame.sprite.Sprite):
         ### Carrega as imagens para a animação padrão (correndo)
         for i in range(10):
             img = sprite_sheet.subsurface((i * 417, 0), (417, 509))
-            img = pygame.transform.scale(img, (int(417/3), int(509/3)))
+            img = pygame.transform.scale(img, (int(417 / 3), int(509 / 3)))
             self.imagens_personagem.append(img)
 
         ### Carrega as imagens para a animação de deslize
         for j in range(10):
             imgSlide = sprite_sheetSlide.subsurface((j * 396, 0), (396, 391))
-            imgSlide = pygame.transform.scale(imgSlide, (int(396/3), int(391/3)))
+            imgSlide = pygame.transform.scale(imgSlide, (int(396 / 3), int(391 / 3)))
             self.imagens_personagemSlide.append(imgSlide)
 
         ### Carrega as imagens para a animação de pulo
         for k in range(10):
             imgPulo = sprite_sheetPulo.subsurface((k * 409, 0), (409, 538))
-            imgPulo = pygame.transform.scale(imgPulo, (int(409/3), int(538/3)))
+            imgPulo = pygame.transform.scale(imgPulo, (int(409 / 3), int(538 / 3)))
             self.imagens_personagemPulo.append(imgPulo)
 
         self.index_lista = 0
         self.image = self.imagens_personagem[int(self.index_lista)]
         self.rect = self.image.get_rect()
+        # Mascara para o personagem pra usar na colisão
+        self.mask = pygame.mask.from_surface(self.image)
+
         ### Parametros pra posicionamento (chao, velocidade) e movimentação
         self.rect.center = (x, y)
         self.velocidade = 5
@@ -49,9 +52,8 @@ class Personagem(pygame.sprite.Sprite):
         self.tempo_deslizando = 0
         self.tempo_max_deslizando = 1
         self.tempo = 0
-        self.chao = 490
+        self.chao = 410
 
-   
     ### Eventos pra movimentar o personagem
     def atualiza_personagem(self):
         keys = pygame.key.get_pressed()
@@ -67,14 +69,14 @@ class Personagem(pygame.sprite.Sprite):
 
     def update(self):
         ### Movimenta o personagem para os lados somente no caso dele estar no chão
-        if self.rect.centery == self.chao: #
+        if self.rect.centery == self.chao:  #
             self.index_lista += 0.5
             if self.index_lista > 9:
                 self.index_lista = 0
             self.image = self.imagens_personagem[int(self.index_lista)]
 
         ### Fazer o movimento do personagem pulando
-        if self.pulando: # pra fazer o movimento do personagem pular
+        if self.pulando:  # pra fazer o movimento do personagem pular
             if self.rect.centery > (self.chao - self.altura_pulo):
                 self.rect.centery -= self.velocidade_subida
                 self.index_lista += 0.7
@@ -107,10 +109,10 @@ class Personagem(pygame.sprite.Sprite):
         else:
             self.deslizando = False
 
-
     ### Função para desenhar o personagem no main
     def desenhar(self, tela):
         tela.blit(self.image, self.rect)
+
 
 sprites = pygame.sprite.Group()
 pers = Personagem(0, 0)
