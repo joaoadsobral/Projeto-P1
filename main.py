@@ -21,9 +21,7 @@ fundo = pygame.transform.scale(imagem, tamanho)
 display = pygame.display.set_mode([largura, altura])
 
 #instancia Obstaculo
-obstaculo_Pedra = Pedra(900, 450)
-
-
+obstaculo_Pedra = Pedra(2000, 450)
 
 ### Crie um grupo de obstaculos
 
@@ -39,7 +37,6 @@ esmeraldas = pygame.sprite.Group()
 sprites.add(personagem)
 sprites.add(obstaculo_Pedra)
 
-
 ### Carregue uma fonte para o texto do contador de moedas
 pygame.font.init()
 fonte = pygame.font.Font(None, 36)
@@ -52,10 +49,6 @@ moeda = Moeda(imagem, 10, 10)
 rubi = Rubi(imagem, 10, 10)
 esmeralda = Esmeralda(imagem, 10, 10)
 
-
-
-
-
 ### Inicialize as moedas
 moedas_lista = moeda.inicializar_moedas()
 moedas.add(moedas_lista)  # Adicione as moedas ao grupo de moedas
@@ -67,7 +60,7 @@ esmeraldas.add(esmeraldas_lista)
 
 ### Parametros para as moedas entrarem em Loop
 tempo_decorrido = 0
-intervalo_criacao_moedas = 7500
+intervalo_criacao_moedas = 10000
 tempo_anterior = pygame.time.get_ticks()
 
 #Imagem das moedas
@@ -96,6 +89,21 @@ def tela_start():
             if evento.type == pygame.KEYDOWN and evento.key == pygame.K_SPACE:
                 esperando_inicio = False
 
+def tela_game_over():
+    start_image = imagem
+    start_image = pygame.transform.scale(start_image, (largura, altura))
+    display.blit(start_image, (0, 0))
+    pygame.display.update()
+
+    esperando_final = True
+    while esperando_final:
+        for evento in pygame.event.get():
+            if evento.type == pygame.QUIT:
+                pygame.quit()
+                quit()
+            if evento.type == pygame.KEYDOWN and evento.key == pygame.K_SPACE:
+                esperando_final = False
+
 tela_start()
 
 ### Loop do jogo, que só vai terminar quando fechar a aba
@@ -110,14 +118,15 @@ while gameLoop:
             gameLoop = False
     ## Colisões com os obstaculos
     colisoes = pygame.sprite.spritecollide(personagem, grupo_obstaculos, False, pygame.sprite.collide_mask)
+
     ### Imagem do cenário entrar em looping
-    if not colisoes: # se colidir com os obstaculos ele vai parar todo o looping
+    if not colisoes: ### se colidir com os obstaculos ele vai parar todo o looping
         display.blit(fundo, (i, 0))
         display.blit(fundo, (840 + i, 0))
         if i == -840:
             display.blit(fundo, (840 + i, 0))
             i = 0
-        i -= 20
+        i -= 10
 
         ### Loop para o contador de moedas
         for moeda in moedas:
@@ -143,6 +152,7 @@ while gameLoop:
             rubi.movimento()
         for esmeralda in esmeraldas:
             esmeralda.movimento()
+
         # Fazer obstaculo fixo no mapa
         obstaculo_Pedra.movimento()
 
@@ -176,7 +186,8 @@ while gameLoop:
         display.blit(imagem_contador_esmeraldas, (230, 10))
         texto_contador_esmeraldas = fonte.render(f": {contador_esmeraldas}", True, (255, 255, 255))
         display.blit(texto_contador_esmeraldas, (295, 28))
-        #Desenha os sprites (personagem) na tela
+
+        # Desenha os sprites (personagem) na tela
         sprites.update()
         sprites.draw(display)
         personagem.atualiza_personagem()
