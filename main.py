@@ -4,6 +4,7 @@ from Personagem.personagem import Personagem
 from Coletáveis.moedas import Moeda
 from Coletáveis.moedas import Rubi
 from Coletáveis.moedas import Esmeralda
+from Colisões.pedra import Pedra
 
 pygame.init()
 
