@@ -33,7 +33,7 @@ class Moeda(pygame.sprite.Sprite):
 
 
 class Rubi(pygame.sprite.Sprite):
-    ### Parametros iniciais das moedas
+    ### Parametros iniciais dos Rubis
     def __init__(self, imagem, x, y):
         super().__init__()
         self.image = imagem
