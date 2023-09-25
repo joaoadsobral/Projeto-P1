@@ -7,7 +7,6 @@ from Coletáveis.moedas import Esmeralda
 from Colisões.pedra import Pedra
 
 pygame.init()
-
 clock = pygame.time.Clock()
 
 ### Tela, formato, + carregando o cenário
@@ -51,7 +50,7 @@ esmeraldas.add(esmeraldas_lista)
 
 ### Parametros para as moedas entrarem em Loop
 tempo_decorrido = 0
-intervalo_criacao_moedas = 5000
+intervalo_criacao_moedas = 7500
 tempo_anterior = pygame.time.get_ticks()
 
 #Imagem das moedas
@@ -76,7 +75,6 @@ def tela_start():
         for evento in pygame.event.get():
             if evento.type == pygame.QUIT:
                 pygame.quit()
-                quit()
             if evento.type == pygame.KEYDOWN and evento.key == pygame.K_SPACE:
                 esperando_inicio = False
 
@@ -145,18 +143,18 @@ while gameLoop:
 
     ### Contador de Moedas
     display.blit(imagem_contador_moedas, (10, 10))
-    texto_contador_moeda = fonte.render(f"{contador_moedas}", True, (255, 255, 255))
+    texto_contador_moeda = fonte.render(f": {contador_moedas}", True, (255, 255, 255))
     display.blit(texto_contador_moeda, (55, 28))
     
     ### Contador Rubis
-    display.blit(imagem_contador_rubis, (95, 10))
-    texto_contador_rubis = fonte.render(f"{contador_rubis}", True, (255, 255, 255))
-    display.blit(texto_contador_rubis, (155, 28))
+    display.blit(imagem_contador_rubis, (120, 10))
+    texto_contador_rubis = fonte.render(f": {contador_rubis}", True, (255, 255, 255))
+    display.blit(texto_contador_rubis, (175, 28))
     
     ### Contador Esmeraldas
-    display.blit(imagem_contador_esmeraldas, (195, 10))
-    texto_contador_esmeraldas = fonte.render(f"{contador_esmeraldas}", True, (255, 255, 255))
-    display.blit(texto_contador_esmeraldas, (255, 28))
+    display.blit(imagem_contador_esmeraldas, (230, 10))
+    texto_contador_esmeraldas = fonte.render(f": {contador_esmeraldas}", True, (255, 255, 255))
+    display.blit(texto_contador_esmeraldas, (295, 28))
     
     ### Atualiza os sprites e Desenha os sprites (personagem) na tela
     sprites.update()

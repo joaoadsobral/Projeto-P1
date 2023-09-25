@@ -45,7 +45,7 @@ class Rubi(pygame.sprite.Sprite):
         ### Carrega a imagem da moeda e muda o tamanho
         imagem_original = pygame.image.load("Sprites/Coletaveis/ruby.png")
         imagem_redimensionada = pygame.transform.scale(imagem_original, (50, 50))
-        posicoes_rubis = [(1375, 350), (1525, 350)]
+        posicoes_rubis = [(2375, 350), (2525, 350)]
         rubis = []
 
         for posicao in posicoes_rubis:
@@ -76,7 +76,7 @@ class Esmeralda(pygame.sprite.Sprite):
         ### Carrega a imagem da moeda e muda o tamanho
         imagem_original = pygame.image.load("Sprites/Coletaveis/esmeralda.png")
         imagem_redimensionada = pygame.transform.scale(imagem_original, (50, 50))
-        posicoes_esmeraldas = [(1450, 200)]
+        posicoes_esmeraldas = [(3450, 500), (3600, 500), (3750, 500)]
         esmeraldas = []
 
         for posicao in posicoes_esmeraldas:
