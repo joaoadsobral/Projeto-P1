@@ -7,6 +7,7 @@ from Coletáveis.moedas import Esmeralda
 from Colisões.pedra import Pedra
 
 pygame.init()
+
 clock = pygame.time.Clock()
 
 ### Tela, formato, + carregando o cenário
@@ -19,13 +20,25 @@ imagem = pygame.image.load('Sprites/Cenário/img.png')
 fundo = pygame.transform.scale(imagem, tamanho)
 display = pygame.display.set_mode([largura, altura])
 
+#instancia Obstaculo
+obstaculo_Pedra = Pedra(900, 450)
+
+
+
+### Crie um grupo de obstaculos
+
+grupo_obstaculos = pygame.sprite.Group()
+grupo_obstaculos.add(obstaculo_Pedra)
 ### Crie um grupo de sprites
+
 sprites = pygame.sprite.Group()
-personagem = Personagem(100, 500)
+personagem = Personagem(250, 430)
 moedas = pygame.sprite.Group()
 rubis = pygame.sprite.Group()
 esmeraldas = pygame.sprite.Group()
 sprites.add(personagem)
+sprites.add(obstaculo_Pedra)
+
 
 ### Carregue uma fonte para o texto do contador de moedas
 pygame.font.init()
@@ -40,6 +53,9 @@ rubi = Rubi(imagem, 10, 10)
 esmeralda = Esmeralda(imagem, 10, 10)
 
 
+
+
+
 ### Inicialize as moedas
 moedas_lista = moeda.inicializar_moedas()
 moedas.add(moedas_lista)  # Adicione as moedas ao grupo de moedas
@@ -47,6 +63,7 @@ rubis_lista = rubi.inicializar_rubis()
 rubis.add(rubis_lista)
 esmeraldas_lista = esmeralda.inicializar_esmeraldas()
 esmeraldas.add(esmeraldas_lista)
+
 
 ### Parametros para as moedas entrarem em Loop
 tempo_decorrido = 0
@@ -75,6 +92,7 @@ def tela_start():
         for evento in pygame.event.get():
             if evento.type == pygame.QUIT:
                 pygame.quit()
+                quit()
             if evento.type == pygame.KEYDOWN and evento.key == pygame.K_SPACE:
                 esperando_inicio = False
 
@@ -90,77 +108,83 @@ while gameLoop:
     for evento in pygame.event.get():
         if evento.type == pygame.QUIT:
             gameLoop = False
-
+    ## Colisões com os obstaculos
+    colisoes = pygame.sprite.spritecollide(personagem, grupo_obstaculos, False, pygame.sprite.collide_mask)
     ### Imagem do cenário entrar em looping
-
-    display.blit(fundo, (i, 0))
-    display.blit(fundo, (840 + i, 0))
-    if i == -840:
+    if not colisoes: # se colidir com os obstaculos ele vai parar todo o looping
+        display.blit(fundo, (i, 0))
         display.blit(fundo, (840 + i, 0))
-        i = 0
-    i -= 5
+        if i == -840:
+            display.blit(fundo, (840 + i, 0))
+            i = 0
+        i -= 20
 
-    ### Loop para o contador de moedas
-    for moeda in moedas:
-        display.blit(moeda.image, moeda.rect)
-        if pygame.sprite.collide_rect(moeda, personagem):
-            moedas.remove(moeda)
-            contador_moedas += 1
-    for rubi in rubis:
-        display.blit(rubi.image, rubi.rect)
-        if pygame.sprite.collide_rect(rubi, personagem):
-            rubis.remove(rubi)
-            contador_rubis += 1
-    for esmeralda in esmeraldas:
-        display.blit(esmeralda.image, esmeralda.rect)
-        if pygame.sprite.collide_rect(esmeralda, personagem):
-            esmeraldas.remove(esmeralda)
-            contador_esmeraldas += 1
+        ### Loop para o contador de moedas
+        for moeda in moedas:
+            display.blit(moeda.image, moeda.rect)
+            if pygame.sprite.collide_rect(moeda, personagem):
+                moedas.remove(moeda)
+                contador_moedas += 1
+        for rubi in rubis:
+            display.blit(rubi.image, rubi.rect)
+            if pygame.sprite.collide_rect(rubi, personagem):
+                rubis.remove(rubi)
+                contador_rubis += 1
+        for esmeralda in esmeraldas:
+            display.blit(esmeralda.image, esmeralda.rect)
+            if pygame.sprite.collide_rect(esmeralda, personagem):
+                esmeraldas.remove(esmeralda)
+                contador_esmeraldas += 1
 
-    ### Fazer os coletáveis se mexerem
-    for moeda in moedas:
-        moeda.movimento()
-    for rubi in rubis:
-        rubi.movimento()
-    for esmeralda in esmeraldas:
-        esmeralda.movimento()
+        ### Fazer os coletáveis se mexerem
+        for moeda in moedas:
+            moeda.movimento()
+        for rubi in rubis:
+            rubi.movimento()
+        for esmeralda in esmeraldas:
+            esmeralda.movimento()
+        # Fazer obstaculo fixo no mapa
+        obstaculo_Pedra.movimento()
 
-    tempo_atual = pygame.time.get_ticks()
-    tempo_decorrido += tempo_atual - tempo_anterior
-    tempo_anterior = tempo_atual
+        tempo_atual = pygame.time.get_ticks()
+        tempo_decorrido += tempo_atual - tempo_anterior
+        tempo_anterior = tempo_atual
 
-    if tempo_decorrido >= intervalo_criacao_moedas:
-        # Crie uma nova sequência de moedas e adicione-as ao grupo de moedas
-        moedas_lista = moeda.inicializar_moedas()
-        moedas.add(moedas_lista)
-        rubis_lista = rubi.inicializar_rubis()
-        rubis.add(rubis_lista)
-        esmeraldas_lista = esmeralda.inicializar_esmeraldas()
-        esmeraldas.add(esmeraldas_lista)
+        if tempo_decorrido >= intervalo_criacao_moedas:
+            # Crie uma nova sequência de moedas e adicione-as ao grupo de moedas
+            moedas_lista = moeda.inicializar_moedas()
+            moedas.add(moedas_lista)
+            rubis_lista = rubi.inicializar_rubis()
+            rubis.add(rubis_lista)
+            esmeraldas_lista = esmeralda.inicializar_esmeraldas()
+            esmeraldas.add(esmeraldas_lista)
 
-        # Zere o tempo decorrido
-        tempo_decorrido = 0
+            # Zere o tempo decorrido
+            tempo_decorrido = 0
 
-    ### Contador de Moedas
-    display.blit(imagem_contador_moedas, (10, 10))
-    texto_contador_moeda = fonte.render(f": {contador_moedas}", True, (255, 255, 255))
-    display.blit(texto_contador_moeda, (55, 28))
-    
-    ### Contador Rubis
-    display.blit(imagem_contador_rubis, (120, 10))
-    texto_contador_rubis = fonte.render(f": {contador_rubis}", True, (255, 255, 255))
-    display.blit(texto_contador_rubis, (175, 28))
-    
-    ### Contador Esmeraldas
-    display.blit(imagem_contador_esmeraldas, (230, 10))
-    texto_contador_esmeraldas = fonte.render(f": {contador_esmeraldas}", True, (255, 255, 255))
-    display.blit(texto_contador_esmeraldas, (295, 28))
-    
-    ### Atualiza os sprites e Desenha os sprites (personagem) na tela
-    sprites.update()
-    sprites.draw(display)
-    pygame.display.update()
-    personagem.atualiza_personagem()
+        ### Contador de Moedas
+        display.blit(imagem_contador_moedas, (10, 10))
+        texto_contador_moeda = fonte.render(f": {contador_moedas}", True, (255, 255, 255))
+        display.blit(texto_contador_moeda, (55, 28))
 
-### Encerrar o jogo caso feche a tela
-pygame.quit()
+        ### Contador Rubis
+        display.blit(imagem_contador_rubis, (120, 10))
+        texto_contador_rubis = fonte.render(f": {contador_rubis}", True, (255, 255, 255))
+        display.blit(texto_contador_rubis, (175, 28))
+
+        ### Contador Esmeraldas
+        display.blit(imagem_contador_esmeraldas, (230, 10))
+        texto_contador_esmeraldas = fonte.render(f": {contador_esmeraldas}", True, (255, 255, 255))
+        display.blit(texto_contador_esmeraldas, (295, 28))
+        #Desenha os sprites (personagem) na tela
+        sprites.update()
+        sprites.draw(display)
+        personagem.atualiza_personagem()
+        display.blit(obstaculo_Pedra.image, obstaculo_Pedra.rect)
+        pygame.display.flip()
+
+    else:
+        # Se houver colisões, apenas atualize a tela sem mover nada
+        display.blit(fundo, (i, 0))
+        sprites.draw(display)
+        display.blit(obstaculo_Pedra.image, obstaculo_Pedra.rect)
