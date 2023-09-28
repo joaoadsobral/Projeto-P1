@@ -67,9 +67,11 @@ tempo_anterior = pygame.time.get_ticks()
 imagem_contador_moedas = pygame.image.load("Sprites/Coletaveis/moeda.png")
 imagem_contador_moedas = pygame.transform.scale(imagem_contador_moedas, (50, 55))
 
+#Rubis
 imagem_contador_rubis = pygame.image.load("Sprites/Coletaveis/ruby.png")
 imagem_contador_rubis = pygame.transform.scale(imagem_contador_rubis, (50, 55))
 
+#Esmeraldas
 imagem_contador_esmeraldas = pygame.image.load("Sprites/Coletaveis/esmeralda.png")
 imagem_contador_esmeraldas = pygame.transform.scale(imagem_contador_esmeraldas, (50, 55))
 
