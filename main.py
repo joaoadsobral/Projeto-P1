@@ -20,6 +20,7 @@ tela_start = pygame.image.load('Sprites/Cenário/start.png')
 ### Adequar a imagem com o tamanho da tela do pygame
 fundo = pygame.transform.scale(imagem, tamanho)
 display = pygame.display.set_mode([largura, altura])
+nome_jogo = pygame.display.set_caption('Laele Jones')
 
 #instancia Obstaculo
 obstaculo_Pedra = Pedra(2000, 450)
