@@ -7,6 +7,9 @@ from Coletáveis.moedas import Esmeralda
 from Colisões.pedra import Pedra
 
 pygame.init()
+#Musica de fundo
+musica_fundo = pygame.mixer.music.load('Música e Sons/Fundo.mp3')
+pygame.mixer.music.play(-1)
 
 clock = pygame.time.Clock()
 
@@ -87,7 +90,7 @@ def tela_start():
     esperando_inicio = True
     while esperando_inicio:
         for evento in pygame.event.get():
-            if evento.type == pygame.QUIT:
+            if evento.type == pygame.QUIT and esperando_inicio == True:
                 pygame.quit()
                 quit()
             if evento.type == pygame.KEYDOWN and evento.key == pygame.K_SPACE:
@@ -102,7 +105,7 @@ def tela_game_over():
     esperando_final = True
     while esperando_final:
         for evento in pygame.event.get():
-            if evento.type == pygame.QUIT:
+            if evento.type == pygame.QUIT and esperando_final == True:
                 pygame.quit()
                 quit()
             if evento.type == pygame.KEYDOWN and evento.key == pygame.K_SPACE:
@@ -110,6 +113,9 @@ def tela_game_over():
 
 
 def main():
+
+    
+
   ### Loop do jogo, que só vai terminar quando fechar a aba
   # instancia Obstaculo
   obstaculo_Pedra = Pedra(2000, 450)
@@ -179,7 +185,7 @@ def main():
       colisoes = pygame.sprite.spritecollide(personagem, grupo_obstaculos, False, pygame.sprite.collide_mask)
 
       ### Imagem do cenário entrar em looping
-      if not colisoes: ### se colidir com os obstaculos ele vai parar todo o looping
+      if not colisoes: ### se colidir com os obstaculos ele vai parar o looping
           display.blit(fundo, (i, 0))
           display.blit(fundo, (840 + i, 0))
           if i == -840:

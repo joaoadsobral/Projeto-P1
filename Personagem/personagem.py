@@ -101,7 +101,7 @@ class Personagem(pygame.sprite.Sprite):
                 if self.index_lista > 9:
                     self.index_lista = 0
                 self.image = self.imagens_personagemSlide[int(self.index_lista)]
-                self.rect.y += 45
+                self.rect.y += 55
 
             if self.tempo_deslizando >= self.tempo_max_deslizando:
                 self.deslizando = False
