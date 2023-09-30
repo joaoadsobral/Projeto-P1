@@ -68,5 +68,3 @@ Um dos maiores erros cometidos ao desenvolver esse projeto foi subestimar a impo
 Foi a primeira vez de grande parte da equipe desenvolvendo algo em conjunto e, assim, todas as partes que estão envolvidas nas etapas de escrever um código com outras pessoas serviram de aprendizado. Em especial, destacam-se o novo entendimento adquirido quanto a necessidade de separar um código em diferentes pastas e de comentar um código, ambos essenciais no processo de desenvolvimento desse projeto. Também foram adquiridos conhecimentos iniciais em relação a programação orientada a objetos e github.
 
 "Colocar nossas imagens do jogo Tela inicial, rodando e game over"
-![Screenshot 1]([https://raw.githubusercontent.com/joaoadsobral/Projeto-P1/main/Sprites/Cen%C3%A1rio/start.png])
-![Screenshot 2](https://i.imgur.com/8juhOBP.png)
