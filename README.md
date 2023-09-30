@@ -16,7 +16,7 @@ O movimento do jogador é controlado através das setas esquerda e direita. A ba
 
 ## Membros da equipe e suas colaborações :
 
-Eduardo Matos (emfs )- criação e movimentação do persongaem
+Eduardo Matos (emfs )- criação e movimentação do persongaem, obstáculo
 
 Fabio Farias (fjcff) - 
 design do jogo e implementação da trilha sonora
