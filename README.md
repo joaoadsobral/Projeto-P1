@@ -7,10 +7,11 @@
 
 Para execução do código, é necessário que você possua Python e pygame instalados.
 - Faça o download do branch main deste repositório e extraia o arquivo .zip.
-- Abra a pasta projetoIP no seu editor de escolha.
+- Abra a pasta Projeto P1 no editor a sua escolha.
+- "Falar que precisa de python e pygame"
 - Execute o arquivo main.py.
 
-O movimento do jogador é controlado através das setas esquerda e direita. A barra de espaço controla seu pulo.
+O movimento do jogador é controlado através das setas esquerda e direita. A barra de espaço controla seu pulo, e a seta para baixo o faz deslizar.
 
 
 ## Membros da equipe e suas colaborações :
