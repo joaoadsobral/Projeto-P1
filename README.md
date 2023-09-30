@@ -15,14 +15,14 @@ O movimento do jogador é controlado através das setas esquerda e direita. A ba
 
 ## Membros da equipe e suas colaborações :
 
-[Fabio Farias (fjcff)] - 
+Eduardo Matos (emfs )- criação e movimentação do persongaem
+
+Fabio Farias (fjcff) - 
 design do jogo e implementação da trilha sonora
 
-[Eduardo Matos (emfs)] - criação e movimentação do persongaem
+João Antônio (jads) -  coletáveis
 
-[João Antônio (jads)] -  coletáveis
-
-[Weldon Pereira (wpb)] - contador dos coletáveis e fazer o "mapa andar"
+Weldon Pereira (wpb) - contador dos coletáveis e fazer o "mapa andar"
 
 ## Organização do código
 
