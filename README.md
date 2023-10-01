@@ -21,7 +21,7 @@ Eduardo Matos (emfs )- criação e movimentação do persongaem, obstáculo
 Fabio Farias (fjcff) - 
 design do jogo e implementação da trilha sonora
 
-João Antônio (jads) -  coletáveis
+João Antônio (jads) -  coletáveis e organização do código
 
 Weldon Pereira (wpb) - contador dos coletáveis e fazer o "mapa andar"
 
