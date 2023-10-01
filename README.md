@@ -43,9 +43,9 @@ Weldon Pereira (wpb) - contador dos coletáveis e fazer o "mapa andar"
 
 ## Ferramentas e  Bibliotecas
 
-Como ferramentas utilizamos o Vscode para nos auxiliar na hora de fazer o código, além do Github Desktop para atualizar nosso repositório através dos commits
+Como ferramentas utilizamos o Vscode para nos auxiliar na hora de fazer o código, além do Github Desktop para atualizar nosso repositório através dos commits.
 
-Como biblioteca utilizamos o Pycharm por cauda da variedade de funcionalidades que ele proporciona na hora de se criar um jogo.
+Como bibliotecas utilizamos o Pygame, umas vez que o mesmo proporciona diversos benefícios ao desenvolver um jogo, como simplificar a manipulação de gráficos 2D, oferecer recursos para lidar com colisões e interações de objetos, além de permitir a integração de áudio e música para criar uma experiência de jogo envolvente e imersiva.
 
 ## Conceitos utilizados
 
