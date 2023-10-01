@@ -61,6 +61,11 @@ Os desafios iniciais surgiram devido às barreiras que encontramos ao tentar com
 
 Quanto aos desafios, além da compreensão das funcionalidades do Pygame e do Git e GitHub, enfrentamos dificuldades ao escrever código em conjunto pela primeira vez e ao nos adaptar ao estilo de escrita em grupo. Tais desafios foram superados não apenas através da comunicação exercida pelo grupo, bem como os estudos que nos proporcionaram a experiência de lidar com essas ferramentas e bibliotecas.
 
+Um dos principais erros que cometemos foi negligenciar a comunicação eficaz em nosso grupo de trabalho, o que levou a desafios significativos relacionados à organização do código. Adicionalmente, a alocação de tarefas entre a equipe levou algum tempo para ser estabelecida, o que acabou contribuindo para alguns revés no projeto. Resumindo, não só a organização do código, como também enfrentamos atrasos na clara definição das responsabilidades individuais ao longo do processo de desenvolvimento do jogo. Esses desafios nos ensinaram valiosas lições sobre a importância da colaboração eficiente e da comunicação constante em grupo.
+
+Quanto ao aprendizado, a experiência em trabalhar coletivamente nos proporcionou um aprendizado valioso, acumulando conhecimentos introdutórios sobre programação orientada a objetos e o uso do GitHub.
+
+
 ![Captura de tela 2023-10-01 164815](https://github.com/joaoadsobral/Projeto-P1/assets/144624798/83d7e426-7240-4c43-9515-9dcbb674b8de)
 ![Captura de tela 2023-10-01 164930](https://github.com/joaoadsobral/Projeto-P1/assets/144624798/5d44905d-dc56-418c-b27f-b9d9d9f699c5)
 ![Captura de tela 2023-10-01 164836](https://github.com/joaoadsobral/Projeto-P1/assets/144624798/ffeff246-e6b6-4308-b218-f7b19dc0479b)
