@@ -27,8 +27,6 @@ Weldon Pereira (wpb) - contador dos coletáveis e fazer o "mapa andar"
 
 ## Organização do código
 
-"bota nossa imagem"
-
 ![Hierarquia de pastas](https://i.imgur.com/amS0ZUW.jpeg)
 
 *main.py* - Aontém  a função main, responsável por controlar o loop principal do jogo e instanciar as suas diferentes classes. Além de possuir algumas constantes como largura e altura da tela.
