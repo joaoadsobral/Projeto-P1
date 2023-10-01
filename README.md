@@ -49,11 +49,11 @@ Como bibliotecas utilizamos o Pygame, umas vez que o mesmo proporciona diversos 
 
 ## Conceitos utilizados
 
-"Detalhar mais isso aqui tudo"
+Durante o desenvolvimento do jogo, utilizamos uma ampla variedade de conceitos de programação que foram abordados ao longo da disciplina. Isso inclui desde os fundamentos básicos, como listas, estruturas de repetição e de controle, funções, até conceitos mais avançados, como a introdução à POO.
 
-Utilizamos os conceitos ensinados no início da disciplina como a noção de listas, estruturas de repetição, funções, até as partes mais avançadas, como noções iniciais de POO.
+Através da POO, pudemos utilizar classes para organizar e encapsular os elementos do jogo, como personagens e objetos, tornando o código mais modular e fácil de manter.
 
-Outra noção de extrema importância para o projeto foi a introdução a classes e objetos. Além do fato de que toda a estrutura do código tem como base a divisão por classes e suas funções, poder gerenciar cada objeto de maneira independente tornou o processo de escrita do código mais fácil e melhorou sua legibilidade de forma significante.
+Além disso, a estrutura do código foi construída em torno da divisão em classes e funções, seguindo as melhores práticas de programação. Essa abordagem proporcionou uma organização lógica do código, facilitando o entendimento das diferentes partes do jogo e simplificando o processo de desenvolvimento.
   
 ## Desafios, erros e aprendizados
 
