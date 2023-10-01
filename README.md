@@ -57,14 +57,16 @@ Além disso, a estrutura do código foi construída em torno da divisão em clas
   
 ## Desafios, erros e aprendizados
 
-"Detalhar bastante
-  
-Os problemas iniciais surgiram com a dificuldade de compreensão, tanto de programação orientada a objetos, quanto ao funcionamento e uso do pygame, e também em relação ao uso do git e github. Esses problemas foram resolvidos com o estudo e experiência que se adquiriu ao longo do processo de desenvolvimento do jogo.
+Os desafios iniciais surgiram devido às barreiras que encontramos ao tentar compreender os conceitos da programação orientada a objetos, o funcionamento do Pygame e a utilização do Git e GitHub. No entanto, ao longo do desenvolvimento do jogo, conseguimos superar esses obstáculos graças ao estudo e à experiência que adquirimos.
 
-Quanto a desafios, podem ser citados a dificuldade de escrever um código em conjunto pela primeira vez e o processo de adaptação ao estilo de escrita de um grande grupo de diferentes pessoas. Uma melhor comunicação, tanto dentro do código, em forma de comentários, quanto fora dele, permitiu que esse desafio fosse superado.
+Quanto aos desafios, além da compreensão das funcionalidades do Pygame e do Git e GitHub, enfrentamos dificuldades ao escrever código em conjunto pela primeira vez e ao nos adaptar ao estilo de escrita em grupo. Tais desafios foram superados não apenas através da comunicação exercida pelo grupo, bem como os estudos que nos proporcionaram a experiência de lidar com essas ferramentas e bibliotecas.
 
-Um dos maiores erros cometidos ao desenvolver esse projeto foi subestimar a importância da organização do código. Houve um momento em que diversas funções, referentes a diferentes classes, foram condensadas em uma só, algo que dificultou a identificação de erros (e suas eventuais correções) e que poderia ter sido evitado se tivessemos focado em manter o código limpo desde o início.
+![Captura de tela 2023-10-01 164815](https://github.com/joaoadsobral/Projeto-P1/assets/144624798/83d7e426-7240-4c43-9515-9dcbb674b8de)
+![Captura de tela 2023-10-01 164930](https://github.com/joaoadsobral/Projeto-P1/assets/144624798/5d44905d-dc56-418c-b27f-b9d9d9f699c5)
+![Captura de tela 2023-10-01 164836](https://github.com/joaoadsobral/Projeto-P1/assets/144624798/ffeff246-e6b6-4308-b218-f7b19dc0479b)
 
-Foi a primeira vez de grande parte da equipe desenvolvendo algo em conjunto e, assim, todas as partes que estão envolvidas nas etapas de escrever um código com outras pessoas serviram de aprendizado. Em especial, destacam-se o novo entendimento adquirido quanto a necessidade de separar um código em diferentes pastas e de comentar um código, ambos essenciais no processo de desenvolvimento desse projeto. Também foram adquiridos conhecimentos iniciais em relação a programação orientada a objetos e github.
 
-"Colocar nossas imagens do jogo Tela inicial, rodando e game over"
+
+
+
+
