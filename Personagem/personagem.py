@@ -62,7 +62,7 @@ class Personagem(pygame.sprite.Sprite):
         if keys[K_RIGHT]:
             self.rect.centerx += self.velocidade
         if self.rect.centery == self.chao:
-            if keys[K_SPACE] and not self.pulando and not self.deslizando:
+            if keys[K_UP] and not self.pulando and not self.deslizando:
                 self.pulando = True
             if keys[K_DOWN] and not self.deslizando:
                 self.deslizando = True

@@ -187,7 +187,7 @@ def main():
 
     while gameLoop:
         #a velocidade do jogo vai aumentar conforme o tempo passar
-        vel_clock += 0.005
+        vel_clock += 0.01
         clock.tick(vel_clock)
 
         ### Parar o jogo quando fechar a aba
