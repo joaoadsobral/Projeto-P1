@@ -9,8 +9,9 @@ Para execução do código, é necessário que você possua Python e pygame inst
 - Faça o download do branch main deste repositório e extraia o arquivo .zip.
 - Abra a pasta Projeto P1 no editor a sua escolha.
 - Execute o arquivo main.py.
+- Para começar o jogo pressione espaço
 
-O movimento do jogador é controlado através das setas esquerda e direita. A barra de espaço controla seu pulo, e a seta para baixo o faz deslizar.
+O movimento do jogador é controlado através das setas esquerda e direita. A barra de espaço ou a seta para cima controla seu pulo, e a seta para baixo o faz deslizar.
 
 
 ## Membros da equipe e suas colaborações :
@@ -36,7 +37,9 @@ Weldon Pereira (wpb) - contador dos coletáveis e fazer o "mapa andar"
 
 *Personagem* - Contém o código da classe persongagem, onde ele vai receber os comandos de movimentação e processar os sprites.
 
-*Sons, Músicas e Sprites* - O primeiro possui os aúdios do jogo e o segundo os sprites de cada elemento do jogo, dividido em subpastas.
+*Sons, Músicas* - Possui os aúdios do jogo.
+
+*Sprites* - Sprites de cada elemento do jogo, dividido em subpastas.
 
 ## Ferramentas e  Bibliotecas
 
