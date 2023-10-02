@@ -19,7 +19,7 @@ largura = 840
 altura = 620
 tamanho = 840, 620
 imagem = pygame.image.load('Sprites/Cenário/img.png')
-tela_start = pygame.image.load('Sprites/Cenário/start.png')
+tela_start = pygame.image.load('Sprites/Cenário/1.png')
 
 ### Adequar a imagem com o tamanho da tela do pygame
 fundo = pygame.transform.scale(imagem, tamanho)
@@ -84,7 +84,7 @@ imagem_contador_esmeraldas = pygame.transform.scale(imagem_contador_esmeraldas, 
 
 ### Tela de Start
 def tela_start():
-    start_image = pygame.image.load('Sprites/Cenário/start.png')
+    start_image = pygame.image.load('Sprites/Cenário/1.png')
     start_image = pygame.transform.scale(start_image, (largura, altura))
     display.blit(start_image, (0, 0))
     pygame.display.update()
@@ -100,7 +100,7 @@ def tela_start():
 
 
 def tela_game_over():
-    gameOver_image = pygame.image.load('Sprites/Cenário/final.png')
+    gameOver_image = pygame.image.load('Sprites/Cenário/2.png')
     gameOver_image = pygame.transform.scale(gameOver_image, (largura, altura))
     display.blit(gameOver_image, (0, 0))
     pygame.display.update()
