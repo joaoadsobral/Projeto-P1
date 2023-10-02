@@ -182,10 +182,12 @@ def main():
     vel_clock = 30
     gameLoop = True
 
-
     while gameLoop:
-        #a velocidade do jogo vai aumentar conforme o tempo passar
-        vel_clock += 0.01
+        #a velocidade do jogo vai aumentar conforme o tempo passar, mas tem um limite
+        if vel_clock >= 60:
+            vel_clock += 0
+        else:
+            vel_clock += 0.01
         clock.tick(vel_clock)
 
         ### Parar o jogo quando fechar a aba
@@ -194,7 +196,6 @@ def main():
                 gameLoop = False
         ## Colisões com os obstaculos
         colisoes = pygame.sprite.spritecollide(personagem, grupo_obstaculos, False, pygame.sprite.collide_mask)
-
         ### Imagem do cenário entrar em looping
         if not colisoes:  ### se colidir com os obstaculos ele vai parar o looping
 
