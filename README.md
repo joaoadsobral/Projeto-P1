@@ -1,6 +1,6 @@
 # Projeto P1 : Laele Jones
 
-Em sintonia com a emocionante saga de Indiana Jones, o jogo 2D intitulado "Laele Jones" foi desenvolvido como parte de um projeto para a disciplina de Programação 1 do Centro de Informática da Universidade Federal de Pernambuco. Neste jogo, os jogadores embarcam em uma aventura sem fim, em um estilo característico de runner, onde controlam um protagonista que corre incansavelmente, coletando valiosas moedas enquanto luta para sobreviver diante das pedras que surgem ao longo do caminho. Os elementos visuais e sonoros transportam os jogadores para o universo icônico de Indiana Jones, tornando essa experiência de jogo ainda mais envolvente.
+Em sintonia com saga de Indiana Jones, o jogo 2D "Laele Jones" foi desenvolvido como parte de um projeto para a disciplina de Programação 1 do Centro de Informática da Universidade Federal de Pernambuco. Neste jogo, os jogadores terão a missão de ir o mais longe possível no mapa, desviando dos obstáculos que surgirem pelo caminho, em um estilo característico de runner, os jogadores controlarão esse personagem que corre incansavelmente, assim, coletando valiosas moedas enquanto "luta" para sobreviver diante esses obstáculos que aparecem no caminho. Os elementos visuais e sonoros transportam os jogadores para o universo de Indiana Jones, tornando essa experiência de jogo ainda mais envolvente (não literalmente hehe).
 
 
 ## Como rodar o código na sua máquina

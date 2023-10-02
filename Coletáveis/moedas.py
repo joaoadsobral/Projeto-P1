@@ -75,7 +75,7 @@ class Esmeralda(pygame.sprite.Sprite):
     def inicializar_esmeraldas(self):
         ### Carrega a imagem da moeda e muda o tamanho
         imagem_original = pygame.image.load("Sprites/Coletaveis/esmeralda.png")
-        imagem_redimensionada = pygame.transform.scale(imagem_original, (50, 50))
+        imagem_redimensionada = pygame.transform.scale(imagem_original, (40, 40))
         posicoes_esmeraldas = [(3450, 400), (3600, 400), (3750, 400)]
         esmeraldas = []
 

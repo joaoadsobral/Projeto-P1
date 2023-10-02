@@ -46,8 +46,8 @@ class Personagem(pygame.sprite.Sprite):
         self.velocidade = 5
         self.pulando = False
         self.deslizando = False
-        self.altura_pulo = 170
-        self.velocidade_queda = 15
+        self.altura_pulo = 190
+        self.velocidade_queda = 17
         self.velocidade_subida = 15
         self.tempo_deslizando = 0
         self.tempo_max_deslizando = 1
@@ -68,8 +68,8 @@ class Personagem(pygame.sprite.Sprite):
                 self.deslizando = True
 
     def update(self):
-        ### Movimenta o personagem para os lados somente no caso dele estar no chão
-        if self.rect.centery == self.chao:  #
+
+        if self.rect.centery == self.chao: ### Movimenta o personagem para os lados somente no caso dele estar no chão
             self.index_lista += 0.5
             if self.index_lista > 9:
                 self.index_lista = 0
