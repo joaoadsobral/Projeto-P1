@@ -1,6 +1,7 @@
 import pygame
 from pygame.locals import *
 import pygame.mask
+
 relogio = pygame.time.Clock()
 
 ### Baixar os Sprites correndo, pulo, deslize
@@ -50,7 +51,7 @@ class Personagem(pygame.sprite.Sprite):
         self.velocidade_queda = 17
         self.velocidade_subida = 15
         self.tempo_deslizando = 0
-        self.tempo_max_deslizando = 1
+        self.tempo_max_deslizando = 0.8
         self.tempo = 0
         self.chao = 410
 
@@ -62,7 +63,7 @@ class Personagem(pygame.sprite.Sprite):
         if keys[K_RIGHT]:
             self.rect.centerx += self.velocidade
         if self.rect.centery == self.chao:
-            if keys[K_UP] and not self.pulando and not self.deslizando:
+            if (keys[K_UP] or keys[K_SPACE]) and not self.pulando and not self.deslizando:
                 self.pulando = True
             if keys[K_DOWN] and not self.deslizando:
                 self.deslizando = True
@@ -113,7 +114,3 @@ class Personagem(pygame.sprite.Sprite):
     def desenhar(self, tela):
         tela.blit(self.image, self.rect)
 
-
-sprites = pygame.sprite.Group()
-pers = Personagem(0, 0)
-sprites.add(pers)

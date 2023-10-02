@@ -1,5 +1,4 @@
 import pygame
-import random
 sprite_sheet = pygame.image.load('Sprites/Colisões/Pedra2.png')
 
 class Pedra(pygame.sprite.Sprite):
@@ -26,8 +25,7 @@ class Pedra(pygame.sprite.Sprite):
         self.image = self.imagens_pedra[int(self.index_lista)]
 
     def movimento(self):
-        aparecer_pedra = random.randint(1000, 2000)
         # toda vez que o obstaculo sair por completo da tela ele reaparece novamente
         if self.rect.topright[0] < 0:
-            self.rect.x = 1500
+            self.rect.x = 2000
         self.rect.x -= 20

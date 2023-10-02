@@ -1,5 +1,4 @@
 import pygame
-import random
 sprite_sheet = pygame.image.load('Sprites/Colisões/Aviao.png')
 class Aviao(pygame.sprite.Sprite):
     def __init__(self, x, y):
@@ -27,9 +26,7 @@ class Aviao(pygame.sprite.Sprite):
 
 
     def movimento(self):
-        aparecer_aviao = random.randint(3000, 5000)
         # toda vez que o obstaculo sair por completo da tela ele reaparece novamente
         if self.rect.topright[0] < 0:
-            self.rect.x = aparecer_aviao
+            self.rect.x = 9000
         self.rect.x -= 21
-

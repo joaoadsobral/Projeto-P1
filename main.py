@@ -15,6 +15,7 @@ pygame.mixer.music.play(-1)
 # Sons colisões
 som_moedas = pygame.mixer.Sound('Música e Sons/smw_coin.wav')
 som_GameOver = pygame.mixer.Sound('Música e Sons/game_over.wav')
+som_pedras = pygame.mixer.Sound('Música e Sons/pedra_collect.wav')
 clock = pygame.time.Clock()
 
 ### Tela, formato, + carregando o cenário
@@ -33,7 +34,7 @@ nome_jogo = pygame.display.set_caption('Laele Jones')
 
 # instancia Obstaculo
 obstaculo_Pedra = Pedra(2000, 450)
-obstaculo_Aviao = Aviao(1000, 300)
+obstaculo_Aviao = Aviao(5000, 300)
 ### Crie um grupo de obstaculos
 
 grupo_obstaculos = pygame.sprite.Group()
@@ -86,7 +87,6 @@ imagem_contador_rubis = pygame.transform.scale(imagem_contador_rubis, (50, 55))
 imagem_contador_esmeraldas = pygame.image.load("Sprites/Coletaveis/esmeralda.png")
 imagem_contador_esmeraldas = pygame.transform.scale(imagem_contador_esmeraldas, (50, 55))
 
-
 ### Tela de Start
 def tela_start():
     start_image = pygame.image.load('Sprites/Cenário/start.png')
@@ -102,7 +102,6 @@ def tela_start():
                 quit()
             if evento.type == pygame.KEYDOWN and evento.key == pygame.K_SPACE:
                 esperando_inicio = False
-
 
 def tela_game_over():
     gameOver_image = pygame.image.load('Sprites/Cenário/final.png')
@@ -120,16 +119,14 @@ def tela_game_over():
             if evento.type == pygame.KEYDOWN and evento.key == pygame.K_SPACE:
                 esperando_final = False
 
-
 def main():
+
     ### Loop do jogo, que só vai terminar quando fechar a aba
     # instancia Obstaculo
     obstaculo_Pedra = Pedra(2000, 450)
-    obstaculo_Aviao = Aviao(1000, 300)
+    obstaculo_Aviao = Aviao(5000, 300)
 
-
-    ### Crie um grupo de obstaculos
-
+    ### Grupo de obstaculos
     grupo_obstaculos = pygame.sprite.Group()
     grupo_obstaculos.add(obstaculo_Pedra, obstaculo_Aviao)
     ### Crie um grupo de sprites
@@ -185,6 +182,7 @@ def main():
     vel_clock = 30
     gameLoop = True
 
+
     while gameLoop:
         #a velocidade do jogo vai aumentar conforme o tempo passar
         vel_clock += 0.01
@@ -218,11 +216,13 @@ def main():
                 display.blit(rubi.image, rubi.rect)
                 if pygame.sprite.collide_rect(rubi, personagem):
                     rubis.remove(rubi)
+                    som_pedras.play()
                     contador_rubis += 1
             for esmeralda in esmeraldas:
                 display.blit(esmeralda.image, esmeralda.rect)
                 if pygame.sprite.collide_rect(esmeralda, personagem):
                     esmeraldas.remove(esmeralda)
+                    som_pedras.play()
                     contador_esmeraldas += 1
 
             ### Fazer os coletáveis se mexerem
@@ -279,6 +279,5 @@ def main():
         else:
             tela_game_over()
             main()
-
 
 main()
