@@ -8,7 +8,6 @@ Em sintonia com saga de Indiana Jones, o jogo 2D "Laele Jones" foi desenvolvido 
 Para execução do código, é necessário que você possua Python e pygame instalados.
 - Faça o download do branch main deste repositório e extraia o arquivo .zip.
 - Abra a pasta Projeto P1 no editor a sua escolha.
-- "Falar que precisa de python e pygame"
 - Execute o arquivo main.py.
 
 O movimento do jogador é controlado através das setas esquerda e direita. A barra de espaço controla seu pulo, e a seta para baixo o faz deslizar.
@@ -29,7 +28,7 @@ Weldon Pereira (wpb) - contador dos coletáveis e fazer o "mapa andar"
 
 ![Hierarquia de pastas](https://i.imgur.com/amS0ZUW.jpeg)
 
-*main.py* - Aontém  a função main, responsável por controlar o loop principal do jogo e instanciar as suas diferentes classes. Além de possuir algumas constantes como largura e altura da tela.
+*main.py* - Contém  a função main, responsável por controlar o loop principal do jogo e instanciar as suas diferentes classes. Além de possuir algumas constantes como largura e altura da tela.
 
 *Coletáveis* - Contém as classes de cada um dos coletáveis.
 
@@ -37,7 +36,7 @@ Weldon Pereira (wpb) - contador dos coletáveis e fazer o "mapa andar"
 
 *Personagem* - Contém o código da classe persongagem, onde ele vai receber os comandos de movimentação e processar os sprites.
 
-*Sons, Músicas e Sprites* - o primeiro possui os aúdios do jogo e o segundo os sprites de cada elemento do jogo, dividido em subpastas.
+*Sons, Músicas e Sprites* - O primeiro possui os aúdios do jogo e o segundo os sprites de cada elemento do jogo, dividido em subpastas.
 
 ## Ferramentas e  Bibliotecas
 
@@ -65,8 +64,12 @@ Quanto ao aprendizado, a experiência em trabalhar coletivamente nos proporciono
 
 
 ![Captura de tela 2023-10-01 164815](https://github.com/joaoadsobral/Projeto-P1/assets/144624798/83d7e426-7240-4c43-9515-9dcbb674b8de)
-![Captura de tela 2023-10-01 164930](https://github.com/joaoadsobral/Projeto-P1/assets/144624798/5d44905d-dc56-418c-b27f-b9d9d9f699c5)
-![Captura de tela 2023-10-01 164836](https://github.com/joaoadsobral/Projeto-P1/assets/144624798/ffeff246-e6b6-4308-b218-f7b19dc0479b)
+![Captura de tela 2023-10-02 071939](https://github.com/joaoadsobral/Projeto-P1/assets/144624798/c55cfff2-e838-47ee-b894-e7faa63642b4)
+![Captura de tela 2023-10-02 073456](https://github.com/joaoadsobral/Projeto-P1/assets/144624798/b7b2af88-ca69-45d4-9e01-b64facc475dc)
+![Captura de tela 2023-10-02 071820](https://github.com/joaoadsobral/Projeto-P1/assets/144624798/2e2fc038-bb9f-48bf-b537-67651be7e0b8)
+
+
+
 
 
 
