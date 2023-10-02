@@ -9,26 +9,31 @@ from Colisões.Avião import Aviao
 
 pygame.init()
 # Musica de fundo
+pygame.mixer.music.set_volume(0.2) #Ajustar volume da musica
 musica_fundo = pygame.mixer.music.load('Música e Sons/Fundo.mp3')
 pygame.mixer.music.play(-1)
-
+# Sons colisões
+som_moedas = pygame.mixer.Sound('Música e Sons/smw_coin.wav')
+som_GameOver = pygame.mixer.Sound('Música e Sons/game_over.wav')
 clock = pygame.time.Clock()
 
-### Tela, formato, + carregando os cenários
+### Tela, formato, + carregando o cenário
 largura = 840
 altura = 620
 tamanho = 840, 620
 imagem = pygame.image.load('Sprites/Cenário/img.png')
-tela_start = pygame.image.load('Sprites/Cenário/1.png')
+
+tela_start = pygame.image.load('Sprites/Cenário/start.png')
 
 ### Adequar a imagem com o tamanho da tela do pygame
 fundo = pygame.transform.scale(imagem, tamanho)
+
 display = pygame.display.set_mode([largura, altura])
 nome_jogo = pygame.display.set_caption('Laele Jones')
 
 # instancia Obstaculo
 obstaculo_Pedra = Pedra(2000, 450)
-obstaculo_Aviao = Aviao(3000, 300)
+obstaculo_Aviao = Aviao(1000, 300)
 ### Crie um grupo de obstaculos
 
 grupo_obstaculos = pygame.sprite.Group()
@@ -84,7 +89,7 @@ imagem_contador_esmeraldas = pygame.transform.scale(imagem_contador_esmeraldas, 
 
 ### Tela de Start
 def tela_start():
-    start_image = pygame.image.load('Sprites/Cenário/1.png')
+    start_image = pygame.image.load('Sprites/Cenário/start.png')
     start_image = pygame.transform.scale(start_image, (largura, altura))
     display.blit(start_image, (0, 0))
     pygame.display.update()
@@ -100,10 +105,11 @@ def tela_start():
 
 
 def tela_game_over():
-    gameOver_image = pygame.image.load('Sprites/Cenário/2.png')
+    gameOver_image = pygame.image.load('Sprites/Cenário/final.png')
     gameOver_image = pygame.transform.scale(gameOver_image, (largura, altura))
     display.blit(gameOver_image, (0, 0))
     pygame.display.update()
+    som_GameOver.play()
 
     esperando_final = True
     while esperando_final:
@@ -119,7 +125,7 @@ def main():
     ### Loop do jogo, que só vai terminar quando fechar a aba
     # instancia Obstaculo
     obstaculo_Pedra = Pedra(2000, 450)
-    obstaculo_Aviao = Aviao(3000, 300)
+    obstaculo_Aviao = Aviao(1000, 300)
 
 
     ### Crie um grupo de obstaculos
@@ -193,6 +199,7 @@ def main():
 
         ### Imagem do cenário entrar em looping
         if not colisoes:  ### se colidir com os obstaculos ele vai parar o looping
+
             display.blit(fundo, (i, 0))
             display.blit(fundo, (840 + i, 0))
             if i == -840:
@@ -205,6 +212,7 @@ def main():
                 display.blit(moeda.image, moeda.rect)
                 if pygame.sprite.collide_rect(moeda, personagem):
                     moedas.remove(moeda)
+                    som_moedas.play()
                     contador_moedas += 1
             for rubi in rubis:
                 display.blit(rubi.image, rubi.rect)
