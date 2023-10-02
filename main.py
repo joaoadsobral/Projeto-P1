@@ -14,7 +14,7 @@ pygame.mixer.music.play(-1)
 
 clock = pygame.time.Clock()
 
-### Tela, formato, + carregando o cenário
+### Tela, formato, + carregando os cenários
 largura = 840
 altura = 620
 tamanho = 840, 620
