@@ -8,6 +8,8 @@ from Colisões.pedra import Pedra
 from Colisões.Avião import Aviao
 
 pygame.init()
+pygame.mixer.init()
+
 # Musica de fundo
 pygame.mixer.music.set_volume(0.2) #Ajustar volume da musica
 musica_fundo = pygame.mixer.music.load('Música e Sons/Fundo.mp3')
