@@ -65,17 +65,7 @@ Um dos principais erros que cometemos foi negligenciar a comunicação eficaz em
 
 Quanto ao aprendizado, a experiência em trabalhar coletivamente nos proporcionou um aprendizado valioso, acumulando conhecimentos introdutórios sobre programação orientada a objetos e o uso do GitHub.
 
-
-![Captura de tela 2023-10-01 164815](https://github.com/joaoadsobral/Projeto-P1/assets/144624798/83d7e426-7240-4c43-9515-9dcbb674b8de)
+![Tela  de final](https://github.com/user-attachments/assets/d64e73cf-a618-4f35-82f4-44ce182ff251)
 ![Captura de tela 2023-10-02 071939](https://github.com/joaoadsobral/Projeto-P1/assets/144624798/c55cfff2-e838-47ee-b894-e7faa63642b4)
 ![Captura de tela 2023-10-02 073456](https://github.com/joaoadsobral/Projeto-P1/assets/144624798/b7b2af88-ca69-45d4-9e01-b64facc475dc)
-![Captura de tela 2023-10-02 071820](https://github.com/joaoadsobral/Projeto-P1/assets/144624798/2e2fc038-bb9f-48bf-b537-67651be7e0b8)
-
-
-
-
-
-
-
-
-
+![Tela  de final (1)](https://github.com/user-attachments/assets/01ba8e6b-8389-496a-853f-302cc29f13fe)
